@@ -1,8 +1,4 @@
-const {
-    isLight,
-    adjustBrightness,
-    themeData,
-} = require(`./helpers`);
+const { isLight, adjustBrightness, themeData } = require(`./helpers`);
 
 module.exports = (name, colors) => {
     const {
@@ -63,41 +59,37 @@ module.exports = (name, colors) => {
 
         headerRemoveBackgroundHighlight, introSectionActive, playerButton, text: ${text}
 
-        avatarOrange, nameOrange: ${adjustBrightness(
+        avatarCyan, nameCyan, attachContact: ${adjustBrightness(
             primary,
-            -12,
-            themeIsLight
-        )}
-        avatarBlue, nameBlue: ${adjustBrightness(
-            primary,
+            17,
             themeIsLight,
-            -10
         )}
+        avatarBlue, nameBlue: ${adjustBrightness(primary, themeIsLight, 15)}
         avatarGreen, nameGreen, attachFile: ${adjustBrightness(
             primary,
-            -7,
-            themeIsLight
+            10,
+            themeIsLight,
         )}
         avatarViolet, nameViolet: ${adjustBrightness(primary, 5, themeIsLight)}
         avatarRed, nameRed, attachPhoto: ${adjustBrightness(
             primary,
             -5,
-            themeIsLight
+            themeIsLight,
         )}
         avatarPink, namePink, attachLocation: ${adjustBrightness(
             primary,
-            3,
-            themeIsLight
+            -10,
+            themeIsLight,
         )}
         avatarYellow, nameYellow, attachInlineBot: ${adjustBrightness(
             primary,
-            7,
-            themeIsLight
+            -15,
+            themeIsLight,
         )}
-        avatarCyan, nameCyan, attachContact: ${adjustBrightness(
+        avatarOrange, nameOrange: ${adjustBrightness(
             primary,
-            10,
-            themeIsLight
+            -17,
+            themeIsLight,
         )}
         avatarSavedMessages: ${primary}
 
@@ -120,15 +112,11 @@ module.exports = (name, colors) => {
         togglerActiveBackground: ${primary}97
         unread, bubble_unread, bubble_unread_noWallpaper: ${primary}18
         previewBackground: ${filling}C0
-        togglerInactive: ${adjustBrightness(
-            secondaryText,
-            10,
-            themeIsLight
-        )}
+        togglerInactive: ${adjustBrightness(secondaryText, 10, themeIsLight)}
         togglerInactiveBackground: ${adjustBrightness(
             secondaryText,
             10,
-            themeIsLight
+            themeIsLight,
         )}64
         badgeText: ${textOnPrimary}
         badgeMuted: ${text}65

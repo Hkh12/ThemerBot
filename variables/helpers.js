@@ -10,12 +10,12 @@ const isLight = c => Color(c).isLight();
  */
 function adjustBrightness(color, ratio, invert = false) {
     const object = Color(color);
-    return object.lightness(
-        object.lightness() + (invert ? -ratio : ratio)
-    ).hex();
+    return object
+        .lightness(object.lightness() + (invert ? -ratio : ratio))
+        .hex();
 }
 
-const getFgColor = bg => (isLight(bg) ? adjustBrightness(bg, -45) : `#ffffff`);
+const getFgColor = bg => isLight(bg) ? adjustBrightness(bg, -45) : `#ffffff`;
 
 function themeData([filling, text, secondaryText, primary]) {
     const themeIsLight = isLight(filling),
@@ -24,14 +24,16 @@ function themeData([filling, text, secondaryText, primary]) {
         backgroundText = adjustBrightness(secondaryText, 5, themeIsLight),
         bubbleOutColor = adjustBrightness(
             themeIsLight ? primary : filling,
-            themeIsLight ? 41 : -3
+            themeIsLight ? 41 : -3,
         );
 
+    // const st = Color(filling).mix(Color(text)).hex();
     return {
         background,
         filling,
         text,
         backgroundText,
+        // secondaryText: st,
         secondaryText,
         primary,
         textOnPrimary,
